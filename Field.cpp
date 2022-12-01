@@ -49,3 +49,26 @@ void FillField(Square field[NUM_ROWS][NUM_COLS], int minesPlanted)
 		}
 	}
 }
+
+void GameFinished(Square field[NUM_ROWS][NUM_COLS]) {
+
+	for (int i = 0; i < NUM_ROWS; i++) {
+		for (int j = 0; j < NUM_COLS; j++) {
+			if (field[i][j].hasMine == true) {
+				for (int i = 0; i < NUM_ROWS; i++) {
+					for (int j = 0; j < NUM_COLS; j++) {
+						field[i][j].Reveal(i, j, field);
+					}
+				}
+			}
+		}
+	}
+		
+
+}
+
+void Play(int x, int y, Square field[NUM_ROWS][NUM_COLS]) {
+	printf_s("input which square do you want to reveal");
+	scanf_s("input x:%d input y:%d", field);
+}
+
