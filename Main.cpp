@@ -6,16 +6,13 @@
 
 
 
-
-
 int main()
 {
-	srand(time(NULL));
+	//srand(time(NULL));
 	Square field[NUM_ROWS][NUM_COLS];
+	FillField(field, NUM_MINES);
 	Play(field);
-	FillField(field, 0);
 	PrintField(field);
 	GameFinished(field);
 }
-
 
